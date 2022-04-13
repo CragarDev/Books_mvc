@@ -36,9 +36,15 @@
 
 					<body>
 						<!-- Beginning of Container -->
-						<div class="container">
+						<div class="container w-50">
+							<!-- == Home button == -->
+							<p class="w-100"></p>
+							<a class="btn btn-success float-end mb-3" href="/books/update/${book.id}">Update Book</a>
+							<p class="w-100"></p>
 							<p class="w-100 mt-5"></p>
-							<h1 class="text-primary"><c:out value="${book.title}" /></h1>
+							<h1 class="text-primary">
+								<c:out value="${book.title}" />
+							</h1>
 							<br />
 
 							<h5 class="text-white">Description:
@@ -56,7 +62,7 @@
 									<c:out value="${book.numberOfPages}" />
 								</span>
 							</h5>
-						<p class="w-100"></p>
+							<p class="w-100"></p>
 							<!-- == Home button == -->
 							<a class="btn btn-primary float-end mb-3" href="/books">Back</a>
 							<p class="w-100"></p>

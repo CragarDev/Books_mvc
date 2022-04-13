@@ -17,7 +17,8 @@
 
 					<head>
 						<meta charset="UTF-8" />
-						<title>Craig Burke - Rendering Books-home</title>
+						<title>Craig Burke - Books - Update book
+						</title>
 						<!-- Bootstrap -->
 						<!-- CSS only -->
 						<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
@@ -36,58 +37,61 @@
 
 					<body>
 						<!-- Beginning of Container -->
-						<div class="container">
-							<!-- == Home button == -->
+						<div class="container w-50">
 							<p class="w-100"></p>
-							<a class="btn btn-success float-end mb-3" href="/books/new">Create New Book</a>
+							<!-- == Home button == -->
+							<a class="btn btn-primary float-end mb-3" href="/books">Back</a>
 							<p class="w-100"></p>
 							<p class="w-100 mt-5"></p>
-							<h1 class="text-success w-75">All Books:
-							</h1>
+							<h2 class="text-success text-center">Update a book!</h2>
+							<br />
+
+							<!-- Beginning of Form -->
 
 
 							<p class="w-100"></p>
-							<!-- == table == -->
-							<div class="container bg-primary text-dark rounded-3">
-								<table class="table table-striped p-5 border border-2" id="fruit_table">
-									<thead>
-										<tr>
-											<th scope="col" class="h4 text-center">ID</th>
-											<th scope="col" class="h4 text-center">Title</th>
-											<th scope="col" class="h4 text-center">Description</th>
-											<th scope="col" class="h4 text-center"># Pages</th>
-										</tr>
-									</thead>
-									<tbody>
-										<c:forEach var="book" items="${books}">
-											<tr>
-												<td scope="row">
-													<p class="text-center">
-														<c:out value="${book.id}"></c:out>
-													</p>
-												</td>
-												<td scope="row">
-													<p class="text-center">
-														<a href="/show/${book.id}">
-															<c:out value="${book.title}"></c:out>
-														</a>
-													</p>
-												</td>
-												<td scope="row">
-													<p class="text-center">
-														<c:out value="${book.language}"></c:out>
-													</p>
-												</td>
-												<td scope="row">
-													<p class="text-center">
-														<c:out value="${book.numberOfPages}"></c:out>
-													</p>
-												</td>
-											</tr>
-										</c:forEach>
-									</tbody>
-								</table>
+
+							<!-- == form == -->
+							<div class="container bg-secondary text-light rounded-3 w-50">
+								<form action="/books/update/process/${book.id}" method="post">
+
+									<div class="mb-3">
+										<label for="title" class="form-label">Title</label>
+										<input type="text" name="title" class="form-control"
+											value="<c:out value='${book.title}' />">
+									</div>
+
+									<div class="mb-3">
+										<label for="description" class="form-label">Description</label>
+										<input type="text" name="description" class="form-control"
+											value="<c:out value='${book.description}' />">
+									</div>
+
+									<div class="mb-3">
+										<label for="language" class="form-label">Language</label>
+										<input type="text" name="language" class="form-control"
+											value="<c:out value='${book.language}' />">
+									</div>
+
+									<div class="mb-3">
+										<label for="pages" class="form-label">Number of Pages</label>
+										<input type="number" name="pages" class="form-control w-25"
+											value="<c:out value='${book.numberOfPages}' />">
+									</div>
+
+									<button type="submit" class="btn btn-warning float-start">Update Book</button>
+
+								</form>
+								<p class="w-100"></p>
+								<!-- == Home button == -->
+								<a class="btn btn-danger float-end ms-4 mb-3" href="/books/delete/${book.id}">Delete</a>
+								<p class="w-100"></p>
+
 							</div>
+
+							<p class="w-100"></p>
+
+							<!-- == form == -->
 
 						</div>
 						<p class="w-100"></p>
