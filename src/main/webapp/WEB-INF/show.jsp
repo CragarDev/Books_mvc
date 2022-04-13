@@ -37,11 +37,22 @@
 					<body>
 						<!-- Beginning of Container -->
 						<div class="container w-50">
+							<p class="w-100"></p>
+							<!-- == Delete button == -->
+							<a class="btn btn-danger float-end ms-4 mb-3" href="/books/delete/${book.id}">Delete</a>
+							<p class="w-100"></p>
 							<!-- == Home button == -->
 							<p class="w-100"></p>
-							<a class="btn btn-success float-end mb-3" href="/books/update/${book.id}">Update Book</a>
+							<a class="btn btn-warning float-end mb-3" href="/books/updateToo/${book.id}">Update Book
+								Too</a>
+							<p class="w-100"></p>
+							<!-- == Home button == -->
+							<p class="w-100"></p>
+							<a class="btn btn-success float-end mb-3 me-3" href="/books/update/${book.id}">Update
+								Book</a>
 							<p class="w-100"></p>
 							<p class="w-100 mt-5"></p>
+
 							<h1 class="text-primary">
 								<c:out value="${book.title}" />
 							</h1>

@@ -41,6 +41,10 @@
 							<p class="w-100"></p>
 							<a class="btn btn-success float-end mb-3" href="/books/new">Create New Book</a>
 							<p class="w-100"></p>
+							<!-- == Home button == -->
+							<p class="w-100"></p>
+							<a class="btn btn-info float-end mb-3" href="/books/newToo">Create New Book Too</a>
+							<p class="w-100"></p>
 							<p class="w-100 mt-5"></p>
 							<h1 class="text-success w-75">All Books:
 							</h1>

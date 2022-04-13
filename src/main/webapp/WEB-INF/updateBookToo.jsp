@@ -17,7 +17,7 @@
 
 					<head>
 						<meta charset="UTF-8" />
-						<title>Craig Burke - Books - New book too
+						<title>Craig Burke - Books - Update Book Too
 						</title>
 						<!-- Bootstrap -->
 						<!-- CSS only -->
@@ -37,55 +37,69 @@
 
 					<body>
 						<!-- Beginning of Container -->
-						<div class="container">
+						<div class="container w-50">
 							<p class="w-100"></p>
 							<!-- == Home button == -->
 							<a class="btn btn-primary float-end mb-3" href="/books">Back</a>
 							<p class="w-100"></p>
 							<p class="w-100 mt-5"></p>
-							<h2 class="text-success text-center">Create a new book!</h2>
+							<h2 class="text-success text-center">Update a book too!</h2>
 							<br />
-
-							<!-- Beginning of Form -->
-
-
 							<p class="w-100"></p>
 							<!-- == form == -->
 							<div class="container bg-secondary text-light rounded-3 w-50">
-								<form action="/books/new/process" method="post">
+								<form:form action="/books/updateToo/process/${book.id}" method="post" modelAttribute="book">
 
 									<div class="mb-3">
-										<label for="title" class="form-label">Title</label>
-										<input type="text" name="title" class="form-control" placeholder="title">
+										<p>
+											<form:label path="title">Title</form:label>
+											<form:errors path="title" class="text-danger h5" />
+											<form:input path="title" class="form-control" value="${book.title}" />
+
+										</p>
 									</div>
 
 									<div class="mb-3">
-										<label for="description" class="form-label">Description</label>
-										<input type="text" name="description" class="form-control"
-											placeholder="description">
+										<p>
+											<form:label path="description">Description</form:label>
+											<form:errors path="description" class="text-danger h5" />
+											<form:textarea path="description" class="form-control"
+												value="${book.description}" />
+										</p>
 									</div>
 
 									<div class="mb-3">
-										<label for="language" class="form-label">Language</label>
-										<input type="text" name="language" class="form-control" placeholder="language">
+										<p>
+											<form:label path="language">Language</form:label>
+											<form:errors path="language" class="text-danger h5" />
+											<form:input path="language" class="form-control" value="${book.language}" />
+										</p>
 									</div>
 
 									<div class="mb-3">
-										<label for="pages" class="form-label">Number of Pages</label>
-										<input type="number" name="pages" class="form-control w-25" placeholder="pages">
+										<p>
+											<form:label path="numberOfPages">Pages</form:label>
+											<form:errors path="numberOfPages" class="text-danger h5" />
+											<form:input type="number" path="numberOfPages" class="form-control w-25"
+												value="${book.numberOfPages}" />
+										</p>
 									</div>
 
+									<input type="submit" value="Update Book Too"
+										class="btn btn-info text-black float-start" />
 
-
-									<button type="submit" class="btn btn-warning float-start">Add New Book</button>
-
-								</form>
-
+								</form:form>
+								<!-- New form:form items -->
 							</div>
 
 							<p class="w-100"></p>
 
-							<!-- == form == -->
+							<p class="w-100"></p>
+							<!-- == Delete button == -->
+							<a class="btn btn-danger float-end ms-4 mb-3" href="/books/delete/${book.id}">Delete</a>
+							<p class="w-100"></p>
+
+
 
 						</div>
 						<p class="w-100"></p>

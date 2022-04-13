@@ -52,7 +52,7 @@ public class BookService {
     		// get the book to work with
     		Book thisBook = optionalBook.get();
 //    		System.out.println("optionalBook--service " + thisBook);
-    		System.out.println("optionalBook.getTitle--service " + thisBook.getTitle());
+//    		System.out.println("optionalBook.getTitle--service " + thisBook.getTitle());
     		
     		// set the changes to the book
     		thisBook.setTitle(title);
@@ -60,7 +60,33 @@ public class BookService {
     		thisBook.setLanguage(lang);
     		thisBook.setNumberOfPages(numOfPages);
     		
-    		System.out.println("optionalBook.getTitle--service-after update " + thisBook.getTitle());
+//    		System.out.println("optionalBook.getTitle--service-after update " + thisBook.getTitle());
+    		// save the changes
+    		return bookRepository.save(thisBook);
+//    		return this.createBook(thisBook);
+    	} else {
+    		return null;
+    	}
+    }
+    
+    // updates a book
+    public Book updateBookToo(Long id, String title, String desc, String lang, Integer numOfPages) {
+    	// Check if book exists
+    	Optional<Book> optionalBook = bookRepository.findById(id);
+    	if(optionalBook.isPresent()) {
+//    		System.out.println("optionalBook--service " + optionalBook);
+    		// get the book to work with
+    		Book thisBook = optionalBook.get();
+//    		System.out.println("optionalBook--service " + thisBook);
+//    		System.out.println("optionalBook.getTitle--service " + thisBook.getTitle());
+    		
+    		// set the changes to the book
+    		thisBook.setTitle(title);
+    		thisBook.setDescription(desc);
+    		thisBook.setLanguage(lang);
+    		thisBook.setNumberOfPages(numOfPages);
+    		
+//    		System.out.println("optionalBook.getTitle--service-after update " + thisBook.getTitle());
     		// save the changes
     		return bookRepository.save(thisBook);
 //    		return this.createBook(thisBook);
@@ -75,7 +101,6 @@ public class BookService {
     	Optional<Book> optionalBook = bookRepository.findById(id);
     	if(optionalBook.isPresent()) {
     		bookRepository.deleteById(id);
-    	} else {
     		return null;
     	}
 		return null;
