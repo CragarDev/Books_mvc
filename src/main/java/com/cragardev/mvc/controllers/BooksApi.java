@@ -12,11 +12,11 @@ import com.cragardev.mvc.models.Book;
 import com.cragardev.mvc.services.BookService;
 
 @RestController
-public class BooksController {
+public class BooksApi {
 	
 	private final BookService bookService;
 	
-	public BooksController(BookService bookservice) {
+	public BooksApi(BookService bookservice) {
 		this.bookService = bookservice;
 	}
 	

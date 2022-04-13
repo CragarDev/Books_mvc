@@ -17,7 +17,7 @@
 
 					<head>
 						<meta charset="UTF-8" />
-						<title>Craig Burke - Rendering Books-home</title>
+						<title>Craig Burke - Rendering Books-show</title>
 						<!-- Bootstrap -->
 						<!-- CSS only -->
 						<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
@@ -38,31 +38,25 @@
 						<!-- Beginning of Container -->
 						<div class="container">
 							<p class="w-100 mt-5"></p>
-							<h1 class="text-success">Rendering Books:
-								<c:out value="${name}" />
-							</h1>
+							<h1 class="text-primary"><c:out value="${book.title}" /></h1>
 							<br />
 
-							<h5 class="text-white">Item Name:
-								<span class="h4 ms-2 text-warning">
-									<c:out value="${itemName}" />
-								</span>
-							</h5>
-							<h5 class="text-white">Price:
-								<span class="h4 ms-2 text-warning">
-									<c:out value="$${price}" />
-								</span>
-							</h5>
 							<h5 class="text-white">Description:
-								<span class="h4 ms-2 text-warning">
-									<c:out value="${description}" />
+								<span class="h4 ms-2 text-info">
+									<c:out value="${book.description}" />
 								</span>
 							</h5>
-							<h5 class="text-white">Vendor:
-								<span class="h4 ms-2 text-warning">
-									<c:out value="${vendor}" />
+							<h5 class="text-white">Language:
+								<span class="h4 ms-2 text-info">
+									<c:out value="${book.language}" />
 								</span>
 							</h5>
+							<h5 class="text-white">Number of Pages:
+								<span class="h4 ms-2 text-warning">
+									<c:out value="${book.numberOfPages}" />
+								</span>
+							</h5>
+					
 
 						</div>
 						<p class="w-100"></p>
