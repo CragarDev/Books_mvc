@@ -56,8 +56,10 @@
 									<c:out value="${book.numberOfPages}" />
 								</span>
 							</h5>
-					
-
+						<p class="w-100"></p>
+							<!-- == Home button == -->
+							<a class="btn btn-primary float-end mb-3" href="/books">Back</a>
+							<p class="w-100"></p>
 						</div>
 						<p class="w-100"></p>
 						<!-- End of Container -->

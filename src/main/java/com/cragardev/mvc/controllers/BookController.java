@@ -1,5 +1,8 @@
 package com.cragardev.mvc.controllers;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -16,8 +19,11 @@ public class BookController {
 	BookService bookService;
 	
 	@GetMapping("/books")
-	public String books() {
+	public String books(Model model) {
 		
+		List<Book> books = bookService.allBooks();
+//		
+		model.addAttribute("books", books);
 		
 		return "index.jsp";
 	}
@@ -25,7 +31,6 @@ public class BookController {
 	@GetMapping("/show/{bookId}")
 	public String show(Model model, @PathVariable("bookId") long bookId) {
 		Book book = bookService.findBook(bookId);
-//		System.out.println(book.getTitle());
 		
 		model.addAttribute("book", book);
 		

@@ -38,31 +38,52 @@
 						<!-- Beginning of Container -->
 						<div class="container">
 							<p class="w-100 mt-5"></p>
-							<h1 class="text-success">Rendering Books:
-								<c:out value="${name}" />
+							<h1 class="text-success w-75">All Books:
 							</h1>
-							<br />
 
-							<h5 class="text-white">Item Name:
-								<span class="h4 ms-2 text-warning">
-									<c:out value="${itemName}" />
-								</span>
-							</h5>
-							<h5 class="text-white">Price:
-								<span class="h4 ms-2 text-warning">
-									<c:out value="$${price}" />
-								</span>
-							</h5>
-							<h5 class="text-white">Description:
-								<span class="h4 ms-2 text-warning">
-									<c:out value="${description}" />
-								</span>
-							</h5>
-							<h5 class="text-white">Vendor:
-								<span class="h4 ms-2 text-warning">
-									<c:out value="${vendor}" />
-								</span>
-							</h5>
+
+							<p class="w-100"></p>
+							<!-- == table == -->
+							<div class="container bg-primary text-dark rounded-3">
+								<table class="table table-striped p-5 border border-2" id="fruit_table">
+									<thead>
+										<tr>
+											<th scope="col" class="h4 text-center">ID</th>
+											<th scope="col" class="h4 text-center">Title</th>
+											<th scope="col" class="h4 text-center">Description</th>
+											<th scope="col" class="h4 text-center"># Pages</th>
+										</tr>
+									</thead>
+									<tbody>
+										<c:forEach var="book" items="${books}">
+											<tr>
+												<td scope="row">
+													<p class="text-center">
+														<c:out value="${book.id}"></c:out>
+													</p>
+												</td>
+												<td scope="row">
+													<p class="text-center">
+														<a href="/show/${book.id}">
+															<c:out value="${book.title}"></c:out>
+														</a>
+													</p>
+												</td>
+												<td scope="row">
+													<p class="text-center">
+														<c:out value="${book.language}"></c:out>
+													</p>
+												</td>
+												<td scope="row">
+													<p class="text-center">
+														<c:out value="${book.numberOfPages}"></c:out>
+													</p>
+												</td>
+											</tr>
+										</c:forEach>
+									</tbody>
+								</table>
+							</div>
 
 						</div>
 						<p class="w-100"></p>
